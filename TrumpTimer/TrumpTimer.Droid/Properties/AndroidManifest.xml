@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="TrumpTimer.Droid"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="2" android:versionName="1.1" package="me.bloggo.trumptimer">
+	<uses-sdk android:targetSdkVersion="24" android:minSdkVersion="16" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<application android:icon="@drawable/ic_launcher" android:label="The Donald Trump Timer">
+		<activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:theme="@android:style/Theme.Translucent" />
+	</application>
+	<service android:name="com.google.analytics.tracking.android.CampaignTrackingService" />
+	<receiver android:name="com.google.analytics.tracking.android.CampaignTrackingReceiver" android:exported="true">
+		<intent-filter>
+			<action android:name="com.android.vending.INSTALL_REFERRER" />
+		</intent-filter>
+	</receiver>
 </manifest>

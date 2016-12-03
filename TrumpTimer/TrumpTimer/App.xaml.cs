@@ -11,21 +11,33 @@ namespace TrumpTimer
     {
         public App()
         {
-            InitializeComponent();
+            // create the ads
 
-            MainPage = new TrumpTimer.MainPage();
+            this.MainPage = new TrumpTimer.MainPage();
+            // include the ads
+            /*this.MainPage = new ContentPage
+            {
+                Content = new StackLayout
+                {
+                    VerticalOptions = LayoutOptions.Center,
+                    Children = {
+                        new TrumpTimer.MainPage(),
+                        ads
+                    }
+                }
+            };*/
         }
-
+ 
         protected override void OnStart()
         {
             // Handle when your app starts
         }
-
+ 
         protected override void OnSleep()
         {
             // Handle when your app sleeps
         }
-
+ 
         protected override void OnResume()
         {
             // Handle when your app resumes
